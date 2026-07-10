@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  },
+  "rootDirectory": "frontend",
+  "buildCommand": "npx turbo build --filter=frontend",
+  "outputDirectory": ".svelte-kit/vercel",
+  "installCommand": "npm install",
+  "framework": "sveltekit",
+  "devCommand": "npm run dev",
+  "ignoreCommand": "npx turbo-ignore --fallback=HEAD^1"
+}
