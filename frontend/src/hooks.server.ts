@@ -1,5 +1,5 @@
 import { redirect, type Handle } from '@sveltejs/kit';
-import { PUBLIC_MASTER_API_URL } from '$env/static/public';
+import { PUBLIC_API_URL } from '$env/static/public';
 import { ROLE_PATHS } from '$lib/constants/roles';
 
 export const handle: Handle = async ({ event, resolve }) => {
@@ -21,7 +21,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		
 		const fetchUser = async (token: string) => {
 			try {
-				return await fetch(`${PUBLIC_MASTER_API_URL}/api/v1/auth/me`, {
+				return await fetch(`${PUBLIC_API_URL}/api/v1/auth/me`, {
 					headers: {
 						'Authorization': `Bearer ${token}`
 					}
@@ -37,7 +37,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 			// Retry mechanism
 			let refreshRes = null;
 			try {
-				refreshRes = await fetch(`${PUBLIC_MASTER_API_URL}/api/v1/auth/refresh`, {
+				refreshRes = await fetch(`${PUBLIC_API_URL}/api/v1/auth/refresh`, {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',

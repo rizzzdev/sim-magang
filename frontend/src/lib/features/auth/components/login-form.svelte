@@ -2,7 +2,7 @@
   import { Button, Input, Icon } from "$lib/components/atoms";
   import { FormField } from "$lib/components/molecules";
 
-  import { PUBLIC_MASTER_API_URL } from "$env/static/public";
+  import { PUBLIC_API_URL } from "$env/static/public";
   import { toast } from "$lib/stores/toast.svelte";
   import { goto } from "$app/navigation";
 
@@ -15,7 +15,7 @@
     isLoading = true;
 
     try {
-      const res = await fetch(`${PUBLIC_MASTER_API_URL}/api/v1/auth/login`, {
+      const res = await fetch(`${PUBLIC_API_URL}/api/v1/auth/login`, {
         method: "POST",
         credentials: "include",
         headers: {

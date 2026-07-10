@@ -1,4 +1,4 @@
-import { PUBLIC_API_URL, PUBLIC_MASTER_API_URL } from "$env/static/public";
+import { PUBLIC_API_URL } from "$env/static/public";
 import { goto } from "$app/navigation";
 import { toast } from "$lib/stores/toast.svelte";
 
@@ -57,7 +57,7 @@ export const apiClient = async (
   try {
     // Mencoba refresh token
     const refreshRes = await fetch(
-      `${PUBLIC_MASTER_API_URL}/api/v1/auth/refresh`,
+      `${PUBLIC_API_URL}/api/v1/auth/refresh`,
       {
         method: "POST",
         headers: {

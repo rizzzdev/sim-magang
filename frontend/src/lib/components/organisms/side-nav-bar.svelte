@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Icon, Badge } from '../atoms';
 	import { page } from '$app/stores';
-	import { PUBLIC_MASTER_API_URL } from '$env/static/public';
+	import { PUBLIC_API_URL } from '$env/static/public';
 	import { getCookie, deleteCookie, apiClient } from '$lib/utils/api';
 	import { toast } from '$lib/stores/toast.svelte';
 	import { goto } from '$app/navigation';
@@ -44,7 +44,7 @@
 	const handleLogout = async () => {
 		try {
 			const token = getCookie('access_token');
-			await fetch(`${PUBLIC_MASTER_API_URL}/api/v1/auth/logout`, {
+			await fetch(`${PUBLIC_API_URL}/api/v1/auth/logout`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
